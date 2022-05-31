@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SaludoController {
     
-    @GetMapping("/hola{nombre}")
-    public String decirHola(@PathVariable String nombre){
-        return "Hello " + nombre + "!";
+    @GetMapping("/hola/{nombre}/{edad}/{profesion}")
+    public String decirHola(@PathVariable String nombre,
+                            @PathVariable int edad,
+                            @PathVariable String profesion){
+        return "Hello " + nombre + ", tu edad es " + edad + ", y sos " + profesion;
     }
 }
